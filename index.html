@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom register</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script type="module" src="/assets/script.js" defer></script> 
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng ký Phòng học</h1>
+        <div class="login-section">
+            <input type="password" id="passwordInput" placeholder="Nhập mật khẩu">
+            <div class="login-buttons">
+                <button id="loginButton">Đăng nhập</button>
+                <button id="viewModeButton">Chỉ xem</button>
+            </div>
+        </div>
+        <div class="filter-section">
+            <input type="date" id="dateFilter">
+            <select id="periodFilter">
+                <option value="1">Tiết 1</option>
+                <option value="2">Tiết 2</option>
+                <option value="3">Tiết 3</option>
+                <option value="4">Tiết 4</option>
+                <option value="5">Tiết 5</option>
+                <option value="6">Tiết 6</option>
+                <option value="7">Tiết 7</option>
+                <option value="8">Tiết 8</option>
+                <option value="9">Tiết 9</option>
+                <option value="10">Tiết 10</option>
+            </select>
+        </div>
+        <div id="roomList" class="room-list"></div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalRoomName"></h2>
+            <p id="modalRoomStatus"></p>
+            <div class="modal-buttons">
+                <button id="bookButton">Đăng ký</button>
+                <button id="cancelButton">Huỷ đăng ký</button>
+                <button id="closeModalBtn">Đóng</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

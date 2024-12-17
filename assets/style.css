@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-section input {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-section {
+    display: none;  /* Hide by default */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#dateFilter, #periodFilter {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+button#viewModeButton {
+    background-color: #3e97f0;
+}
+
+button:hover {
+    opacity:  0.8;
+}
+
+.room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.room {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 120px; /* Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.room-number {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.room-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.room.open {
+    border-color: #4CAF50;
+}
+
+.room.booked {
+    border-color: #f44336;
+    background-color: #f5f5f5;
+}
+
+.room.booked-by-others {
+    cursor: not-allowed;
+}
+
+.status-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-tag.open {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.status-tag.booked {
+    background-color: #f44336;
+    color: white;
+    display: none;
+}
+
+.booked-by {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    transform: translateY(30px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: none;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    margin-left: 10px;
+}
+
+#bookButton {
+    background-color: #4CAF50;
+}
+
+#cancelButton {
+    background-color: #f44336;
+}
+
+#closeModalBtn {
+    background-color: #999;
+}
+
+#bookButton:hover, #cancelButton:hover, #closeModalBtn:hover {
+    opacity: 0.9;
+}
+
+
+#modalRoomStatus {
+    white-space: pre-line;
+    line-height: 1.5;
+}
